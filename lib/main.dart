@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './widgets/transaction_list.dart';
+import './widgets/user_transaction.dart';
 
 void main() => runApp(MyApp());
 
@@ -21,8 +21,6 @@ class _HomeState extends State<Home> {
   // String titleInput;
   // String amountInput;
   //cara lain ngambil valuenya
-  final titleController = TextEditingController();
-  final amountController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -40,35 +38,7 @@ class _HomeState extends State<Home> {
                 color: Colors.blue,
               ),
             ),
-            Card(
-              elevation: 5,
-              child: Container(
-                padding: EdgeInsets.all(10),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: <Widget>[
-                    TextField(
-                      decoration: InputDecoration(labelText: 'Title'),
-                      // onChanged: (value){
-                      //   titleInput = value;
-                      // },
-                      controller: titleController,
-                    ),
-                    TextField(
-                      decoration: InputDecoration(labelText: 'Amount'),
-                      // onChanged: (value) => amountInput = value
-                      controller: amountController,
-                    ),
-                    FlatButton(
-                      child: Text('Add Transaction'),
-                      textColor: Colors.purple,
-                      onPressed: () {},
-                    ),
-                    TransactionList(),
-                  ],
-                ),
-              ),
-            ),
+            UserTransaction(),
           ],
         ));
   }
